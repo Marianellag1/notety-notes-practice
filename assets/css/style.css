@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFDCB6;
+}
+
+#container {
+    box-shadow: #9384D1 10px 10px;
+}
+
+.item {
+    background-color: #C9A7EB;
+    padding: 1rem;
+    /* border-radius: 16px; */
+}
+
+.item-description { /*Where text will be*/
+padding: .625rem;
+width: 200px;
+margin-bottom: .625rem;
+}
+
+.item-completed:checked + .item-description{ /*targeting checkbox, when checkbox is checked, also +  will include its sibling*/
+text-decoration: line-through;
+}
+
+.item-description {
+    background-color: #C9A7EB;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+}
+
+#add { /*button*/
+    padding: .625rem;
+    cursor: pointer;
+    margin: 2.5rem;
+    border-radius: 16px;
+    width: 100px;
+}

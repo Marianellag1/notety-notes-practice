@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>To-Do List</title>
+</head>
+
+<body>
+    <div id="container"></div> <!-- Will hold items which are input and checkbox -->
+        <template id="itemTemplate"> <!--Means it will not be rendered on the page first, will be in the background-->
+            <div class="item">
+                <input type="checkbox" class="item-completed">
+                <!--If the checkbox is checked, it will show as completed/dashed/crossed-out-->
+                <input type="text" class="item-description" placeholder="Add Item To-Do...">
+            </div>
+        </template>
+    <button id="add">Add Item</button>
+
+    <footer></footer>
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
