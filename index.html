@@ -10,18 +10,22 @@
 </head>
 
 <body>
-    <div id="container"></div> <!-- Will hold items which are input and checkbox -->
-        <template id="itemTemplate"> <!--Means it will not be rendered on the page first, will be in the background-->
-            <div class="item">
-                <input type="checkbox" class="item-completed">
-                <!--If the checkbox is checked, it will show as completed/dashed/crossed-out-->
-                <input type="text" class="item-description" placeholder="Add Item To-Do...">
-            </div>
-        </template>
-    <button id="add">Add Item</button>
+    <div class="container">
+        <span id="date"></span>
+        <div class="to-do">
+            <input type="text" id="item" placeholder="To Do...">
+            <button>Add Item</button>
+            <button>Delete List</button>
+        </div>
+        <ul class="to-do-list"></ul>
+    </div>
 
     <footer></footer>
     <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
+
+<!-- https://blog.logrocket.com/localstorage-javascript-complete-guide/#what-localstorage-javascript -->
+<!-- https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_storage_clear -->
+<!-- https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage -->
