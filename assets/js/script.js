@@ -1,8 +1,43 @@
-var currentDate = new Date();
+let currentDate = new Date(); //Will show long format of date
 const options = {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'};
 document.getElementById("date").innerHTML = currentDate.toLocaleDateString('en-us', options);
 
+const addItem = document.getElementById("add");//button
+const deleteAll = document.getElementById("delete"); //button
+const ul = document.querySelector("ul");
+const textInput = document.getElementById("item");//input
 
+let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
+//If there are any 'pre-existing' items in local storage, to get, else if not, create an empty array.
+console.log(itemsArray); //will show up as [] bc theres nothing.
+
+itemsArray.forEach(addTask);
+function addTask(text) { //a task that is added to the group
+    const li = document.createElement('li')
+    li.textContent = text; //the content will be what user inputs
+    ul.appendChild(li);// append li within the ul
+}
+
+addItem.addEventListener('click', () => {
+    itemsArray.push(textInput.value);
+    //from itemsArray, it will push under, textInput value will show (key && 'value')
+    localStorage.setItem('items', JSON.stringify(itemsArray));
+    //converts all itmes within the itemsArray added as strings
+    addTask(textInput.value);
+    //will add to task, if taken off, will not show any task physcally, only shows in local storage, append it
+    textInput.value = '';
+    //any word entered in input field, will be removed for new task to be entered.
+})
+
+
+deleteAll.addEventListener('click', () => {
+    localStorage.clear();
+    //will clear all storage
+    ul.innerHTML = '',
+    //shows item on screen removed, else if this isn't here, in storage it may be gone, but on screen its still there
+    itemsArray = [];
+    //array becomes empty
+})
 
 // const ITEMS_CONTAINER = document.getElementById("container");
 // const ITEM_TEMPLATE = document.getElementById("itemTemplate");
