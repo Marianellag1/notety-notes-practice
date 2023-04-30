@@ -1,6 +1,14 @@
+:root {
+    --beige:#FFDCB6;
+    --light-purple:#ECC9EE;
+    --medium-purple:#C9A7EB;
+    --dark-purple:#9384D1;
+}
+
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -9,40 +17,72 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #FFDCB6;
+    background-color: var(--beige);
+    font-family: 'Indie Flower', cursive;
 }
 
-#container {
-    box-shadow: #9384D1 10px 10px;
+h1 {
+    text-align: center;
+    margin: 1rem 0;
 }
 
-.item {
+#date {
+    font-weight: 700;
+}
+
+#item {
+    width: 70%;
+    background-color: var(--light-purple);
+    border: none;
+    border-radius: 16px;
+    padding: .25rem;
+    margin: 0 2.5rem;
+}
+
+.container {
+    padding: 1.5rem;
+    border-radius: 16px;
+    background-color: var(--medium-purple);
+    height: 500px;
+    width: 400px;
+    box-shadow: 10px 10px var(--dark-purple);
+}
+
+.to-do {
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.check {
+    padding-left: .625rem;
+}
+
+
+li {
     background-color: #C9A7EB;
-    padding: 1rem;
-    /* border-radius: 16px; */
+    list-style-type: none;
+    margin: 1rem 0;
+    font-weight: 700;
+    border-bottom: 1px solid;
+    text-transform: capitalize;
 }
 
-.item-description { /*Where text will be*/
-padding: .625rem;
-width: 200px;
-margin-bottom: .625rem;
-}
-
-.item-completed:checked + .item-description{ /*targeting checkbox, when checkbox is checked, also +  will include its sibling*/
-text-decoration: line-through;
-}
-
-.item-description {
-    background-color: #C9A7EB;
-    border-right: none;
-    border-left: none;
-    border-top: none;
-}
-
-#add { /*button*/
+button { /*button*/
     padding: .625rem;
     cursor: pointer;
-    margin: 2.5rem;
+    margin: 1.5rem 2rem;
     border-radius: 16px;
     width: 100px;
+    border: none;
+    background-color: var(--dark-purple);
+    color: var(--light-purple);
+}
+
+button:hover {
+    background-color: var(--light-purple);
+    color: var(--dark-purple);
+}
+
+button:active {
+    padding: .655rem;
 }

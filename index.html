@@ -5,17 +5,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>To-Do List</title>
 </head>
 
 <body>
     <div class="container">
-        <span id="date"></span>
         <div class="to-do">
-            <input type="text" id="item" placeholder="To Do...">
-            <button id="add">Add Item</button>
-            <button id="delete">Delete List</button>
+            <span id="date"></span>
+            <h1>To Do List...</h1>
+            <input type="text" id="item" placeholder="Add To Do...">
+            <div class="btn">
+                <button id="add">Add Item</button>
+                <button id="delete">Delete List</button>
+            </div>
         </div>
         <ul class="to-do-list"></ul>
     </div>

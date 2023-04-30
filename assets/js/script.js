@@ -13,11 +13,18 @@ console.log(itemsArray); //will show up as [] bc theres nothing.
 
 itemsArray.forEach(addTask);
 function addTask(text) { //a task that is added to the group
+    
     const li = document.createElement('li')
     li.textContent = text; //the content will be what user inputs
     ul.appendChild(li);// append li within the ul
-}
 
+    // let checkbox = document.createElement('input'); //all items will have a checkbox
+    // checkbox.type = 'checkbox';
+    // checkbox.value = 1;
+    // checkbox.name = "todo[]";
+    // li.appendChild(checkbox)//https://stackoverflow.com/questions/31523203/how-to-insert-a-checkbox-in-a-list-in-javascript
+}
+    
 addItem.addEventListener('click', () => {
     itemsArray.push(textInput.value);
     //from itemsArray, it will push under, textInput value will show (key && 'value')
